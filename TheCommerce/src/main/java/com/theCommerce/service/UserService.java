@@ -3,6 +3,8 @@ package com.theCommerce.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.theCommerce.domain.Users;
@@ -34,8 +36,8 @@ public class UserService {
 	}
 	
 	// 전체 회원 조회
-	public List<Users> findUsers(){
-		return userRepository.findAll();
+	public Page<Users> findUsers(Pageable pageable){
+		return userRepository.findAll(pageable);
 	}
 	
 	// 회원조회
