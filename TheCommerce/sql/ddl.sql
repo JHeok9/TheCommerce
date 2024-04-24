@@ -6,6 +6,6 @@ create table users
  name varchar(255),
  phone varchar(255),
  email varchar(255),
- join_date timestamp default current_timestamp,
+ joinDate timestamp default current_timestamp,
  primary key (id)
 );

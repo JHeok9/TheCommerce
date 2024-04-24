@@ -2,6 +2,7 @@ package com.theCommerce.domain;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -10,16 +11,23 @@ public class Users {
 
 	@Id
 	private String id;
+	
 	private String pw;
+	
 	private String nickname;
+	
 	private String name;
+	
 	private String phone;
+	
 	private String email;
-	private Timestamp join_date;
+	
+	@Column(name = "JOINDATE")
+	private Timestamp joinDate;
 	
 	
 	public Users() {
-        this.join_date = new Timestamp(System.currentTimeMillis());
+        this.joinDate = new Timestamp(System.currentTimeMillis());
     }
 
 	public String getId() {
@@ -70,12 +78,12 @@ public class Users {
 		this.email = email;
 	}
 
-	public Timestamp getJoin_date() {
-		return join_date;
+	public Timestamp getJoinDate() {
+		return joinDate;
 	}
 
-	public void setJoin_date(Timestamp join_date) {
-		this.join_date = join_date;
+	public void setJoinDate(Timestamp joinDate) {
+		this.joinDate = joinDate;
 	}
 	
 	
