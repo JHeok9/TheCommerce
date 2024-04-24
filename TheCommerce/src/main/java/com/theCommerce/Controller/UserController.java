@@ -37,8 +37,8 @@ public class UserController {
 	@PostMapping("/join")
     public ResponseEntity<String> joinUser(Users form) {
         try {
-            String userId = userService.join(form);
-            return ResponseEntity.status(HttpStatus.CREATED).body("회원 가입이 성공적으로 완료되었습니다.");
+            String message = userService.join(form);
+            return ResponseEntity.status(HttpStatus.CREATED).body(message);
         } catch (IllegalStateException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
