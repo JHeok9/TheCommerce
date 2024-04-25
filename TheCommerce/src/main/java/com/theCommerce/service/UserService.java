@@ -46,5 +46,16 @@ public class UserService {
 	}
 	
 	
+	// 회원수정
+	public boolean updateUser(Users updateForm) {
+	    try {
+	        userRepository.save(updateForm);
+	        return true; // 업데이트 성공
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return false; // 업데이트 실패
+	    }
+	}
+	
 
 }

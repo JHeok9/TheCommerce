@@ -83,4 +83,16 @@ public class UserController {
 	    model.addAttribute("user", user);
         return "modifyUser";
     }
+	
+	// 회원수정
+	@PostMapping("{loginId}")
+    public ResponseEntity<String> updateUser(Users updateForm) {
+		boolean isSuccess = userService.updateUser(updateForm);
+	    if (isSuccess) {
+	        return ResponseEntity.ok("회원 정보가 성공적으로 수정되었습니다.");
+	    } else {
+	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("회원 정보 수정에 실패하였습니다.");
+	    }
+    }
+	
 }
