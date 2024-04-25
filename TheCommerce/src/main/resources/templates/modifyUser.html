@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div class="container">
+		<form th:action="@{/api/user/__${user.id}__}" method="post">
+			<div class="form-group">
+				<table>
+					<tr>
+						<td>아이디</td>
+						<td th:text="${user.id}"></td>
+					</tr>
+					<tr>
+						<td>패스워드</td>
+						<td><input type="password" id="pw" name="pw" placeholder="패스워드를 입력하세요"></td>
+					</tr>
+					<tr>
+						<td>닉네임</td>
+						<td><input type="text" id="nickname" name="nickname" th:placeholder="${user.nickname}"></td>
+					</tr>
+					<tr>
+						<td>이름</td>
+						<td><input type="text" id="name" name="name" th:placeholder="${user.name}"></td>
+					</tr>
+					<tr>
+						<td>핸드폰</td>
+						<td><input type="text" id="phone" name="phone" th:placeholder="${user.phone}"></td>
+					</tr>
+					<tr>
+						<td>이메일</td>
+						<td><input type="text" id="email" name="email" th:placeholder="${user.email}"></td>
+					</tr>
+				</table>
+				
+			</div>
+			<button type="submit">등록</button>
+		</form>
+	</div>
+	<!-- /container -->
+</body>
+</html>
