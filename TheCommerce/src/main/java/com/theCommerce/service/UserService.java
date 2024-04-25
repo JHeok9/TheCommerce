@@ -41,8 +41,8 @@ public class UserService {
 	}
 	
 	// 회원조회
-	public Optional<Users> findOne(String memberId){
-		return userRepository.findById(memberId);
+	public Optional<Users> findOne(String userId){
+		return userRepository.findById(userId);
 	}
 	
 	
